@@ -42,7 +42,6 @@ class RegistrationPage:
         return self
 
     def fill_hobbies(self, value):
-        #browser.with_(timeout=browser.config.timeout * 2).element('[for="hobbies-checkbox-1"]').click()
         browser.all('.custom-control').element_by(have.exact_text(value)).click()
         return self
 
