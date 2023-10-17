@@ -1,8 +1,8 @@
-import os
-
 from selene import have
 from selene import command
 from selene.support.shared import browser
+
+import tests_demo.recourses
 
 
 def test_submit_student_registration_form():
@@ -30,7 +30,7 @@ def test_submit_student_registration_form():
     # scrolling to submit button
     browser.element('#submit').perform(command.js.scroll_into_view)
     # add picture
-    browser.element('#uploadPicture').send_keys(os.path.abspath('image/image.png'))
+    browser.element('#uploadPicture').send_keys(tests_demo.recourses.path('image.png'))
     # add address
     browser.element('#currentAddress').type('Monaco, Avenue de la Costa')
     # add state and city
