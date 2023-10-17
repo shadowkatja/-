@@ -1,13 +1,7 @@
-from selene import have
-from selene import command
-from selene.support.shared import browser
-
-import tests_demo.recourses
 from tests_demo.pages.registration_page import RegistrationPage
 
 
 def test_submit_student_registration_form_by_mid_steps():
-
     registration_page = RegistrationPage()
 
     registration_page.open_form()
