@@ -34,10 +34,12 @@ class RegistrationPage:
         browser.element('#userNumber').type(user.number)
         self.fill_date_of_birth(user)
         browser.element('#subjectsInput').click().type(user.subject).press_enter()
-        browser.all('.custom-control').element_by(have.exact_text(user.hobbies)).click()
+        browser.all('#hobbiesWrapper label').element_by(have.exact_text(user.hobbies)).click()
         browser.element('#submit').perform(command.js.scroll_into_view)
         browser.element('#uploadPicture').send_keys(recourses.path(user.image))
         browser.element('#currentAddress').type(user.address)
+        self.fill_state(user)
+        self.fill_city(user)
         browser.element('#submit').perform(command.js.click)
 
     def should_have_registrated_user(self, user:User):
@@ -47,7 +49,8 @@ class RegistrationPage:
                 f'{user.email}',
                 f'{user.gender}',
                 f'{user.number}',
-                f'{user.date_of_birth}',
+                '{0} {1},{2}'.format(
+            user.date_of_birth.strftime("%d"), user.date_of_birth.strftime("%B"), user.date_of_birth.strftime("%Y")),
                 f'{user.subject}',
                 f'{user.hobbies}',
                 f'{user.image}',
