@@ -1,7 +1,7 @@
 from selene import have, command
 from selene.support.shared import browser
 
-from tests_demo import recourses
+import recourses
 
 
 class RegistrationPage:
