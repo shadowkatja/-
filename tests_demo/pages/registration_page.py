@@ -19,7 +19,7 @@ class RegistrationPage:
     def fill_date_of_birth(self, user:User):
         browser.element('#dateOfBirthInput').click()
         browser.element('.react-datepicker__month-select').send_keys(user.date_of_birth.strftime('%B'))
-        browser.element('.react-datepicker__year-select').click().send_keys(user.date_of_birth.year)
+        browser.element('.react-datepicker__year-select').send_keys(user.date_of_birth.year)
         browser.element(f'.react-datepicker__day--0{user.date_of_birth.strftime("%d")}').click()
 
     def fill_state(self, user:User):
