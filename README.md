@@ -1,6 +1,7 @@
 # Homework for QA GURU Python lesson 10
 
 Task:
+
 Refactor your test for student registration using the form at https://demoqa.com/automation-practice-form, using object-oriented paradigm tools to encapsulate the implementation details of user business steps, thus implementing the ideas of the Page Object pattern.
 The task consists of several parts, each of which should be submitted as a separate link to the corresponding branch in the test repository for the demoqa application (all links in one message in the comments below).
 
